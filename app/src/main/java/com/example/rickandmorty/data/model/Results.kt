@@ -12,7 +12,10 @@ import kotlinx.android.parcel.Parcelize
 @JsonClass(generateAdapter = true)
 data class Results(
 
-  @SerializedName("id")@PrimaryKey  var id: Int? = null,
+  @PrimaryKey(autoGenerate = true)
+  @SerializedName("id")
+  var id: Int? = null,
+
   @SerializedName("name") var name: String? = null,
   @SerializedName("status") var status: String? = null,
   @SerializedName("species") var species: String? = null,
