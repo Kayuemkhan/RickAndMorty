@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -34,11 +37,105 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    //core
+    implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //lifecycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+
+    //design
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
+
+    //navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.1'
+
+    //viewModelTesting
+    testImplementation 'androidx.test:core-ktx:1.5.0'
+    testImplementation 'androidx.test.ext:junit-ktx:1.1.5'
+    testImplementation 'org.robolectric:robolectric:4.5.1'
+    //liveDataTesting
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+
+    // AndroidX Test - Instrumented testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
+
+    //datastore
+    def dataStoreVersion = "1.0.0"
+    implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
+
+    //preference
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+
+    //room
+    implementation 'androidx.room:room-runtime:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
+    kapt 'androidx.room:room-compiler:2.5.2'
+
+    //moshi
+    def version_moshi = "1.13.0"
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    //network
+    def retrofit = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    //okhttp3
+    def okhttp3 = "5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttp3"
+
+    //coroutines
+    def coroutines = "1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    //hilt
+    def hilt_version = "2.44"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-navigation-fragment:1.0.0"
+
+
+    // Dependencies for local unit tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    testImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
+    androidTestImplementation "org.mockito:mockito-android:$mockitoVersion"
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    implementation "androidx.test:core:$androidXTestCoreVersion"
+    debugImplementation("androidx.fragment:fragment-testing:1.4.1") {
+        exclude group:'androidx.test', module:'monitor'
+    }
+
+
 }

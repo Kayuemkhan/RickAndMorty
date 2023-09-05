@@ -1,4 +1,4 @@
-package com.example.rickandmortycharacterviewer_androidprojecttask
+package com.example.rickandmorty
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

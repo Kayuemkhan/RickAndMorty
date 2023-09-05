@@ -1,4 +1,4 @@
-package com.example.rickandmortycharacterviewer_androidprojecttask
+package com.example.rickandmorty
 
 import org.junit.Test
 
