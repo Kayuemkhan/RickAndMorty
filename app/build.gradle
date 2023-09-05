@@ -21,7 +21,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "DATABASE_NAME", "\"APP_DATABASE\""
+        }
         release {
+            buildConfigField "String", "DATABASE_NAME", "\"APP_DATABASE\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

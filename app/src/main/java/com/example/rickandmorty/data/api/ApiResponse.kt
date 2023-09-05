@@ -1,4 +1,4 @@
-package com.gplex.wallboard.data.api
+package com.example.rickandmorty.data.api
 
 import android.content.Context
 import android.util.Log
