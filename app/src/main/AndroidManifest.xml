@@ -11,16 +11,18 @@
       tools:ignore="ProtectedPermissions" />
 
   <application
-        android:allowBackup="true"
+      android:name=".RickMortyApp"
+
+      android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RickAndMortyCharacterViewer_AndroidProjectTask"
+        android:theme="@style/Theme.rickandmorty"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

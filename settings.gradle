@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 
     }
 }
-rootProject.name = "RickAndMortyCharacterViewer_AndroidProjectTask"
+rootProject.name = "RickAndMorty"
 include ':app'

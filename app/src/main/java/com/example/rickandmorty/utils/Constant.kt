@@ -3,7 +3,7 @@ package com.example.rickandmorty.utils
 import android.Manifest.permission
 
 object Constant {
-  const val BASE_URL: String = "https://rickandmortyapi.com/api"
+  const val BASE_URL: String = "https://rickandmortyapi.com/api/"
 
 
   const val PERMISSION_REQUEST_CODE = 100

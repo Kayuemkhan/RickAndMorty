@@ -2,10 +2,14 @@ package com.example.rickandmorty.data.api
 
 import android.content.Context
 import android.util.Log
+import com.example.rickandmorty.data.model.CharacterResponse
 import com.example.rickandmorty.utils.AppUtils
 import com.example.rickandmorty.utils.Constant.TAG
+import com.skydoves.sandwich.ApiResponse
+import com.skydoves.sandwich.isSuccess
 import org.json.JSONObject
 import retrofit2.Response
+import timber.log.Timber
 import java.io.IOException
 import java.net.SocketException
 import java.net.SocketTimeoutException
@@ -14,7 +18,7 @@ import javax.inject.Inject
 class ApiResponse @Inject constructor(private val context: Context) : IOException() {
 
 
-  suspend fun <T : Any> getResult(call: suspend () -> Response<T>): T {
+  suspend fun <T : Any> getResult(call: () -> Response<CharacterResponse>): CharacterResponse {
 
 
     if (!AppUtils.isNetworkAvailable(context)) {
@@ -24,12 +28,12 @@ class ApiResponse @Inject constructor(private val context: Context) : IOExceptio
       call.invoke()
 
     } catch (e: SocketException) {
-      Log.e(TAG, "getResult: "+e.localizedMessage)
-      Log.e(TAG, "getResult: $e")
+      Timber.tag(TAG).e("getResult: %s", e.localizedMessage)
+      Timber.tag(TAG).e("getResult: %s", e.toString())
       throw IOException(e.localizedMessage!!)
     } catch (e: IOException) {
-      Log.e(TAG, "getResult: "+e.localizedMessage)
-      Log.e(TAG, "getResult: $e")
+      Timber.e("getResult: " + e.localizedMessage)
+      Timber.e("getResult: " + e)
 
       throw IOException(e.localizedMessage!!)
     } catch (e: SocketTimeoutException) {

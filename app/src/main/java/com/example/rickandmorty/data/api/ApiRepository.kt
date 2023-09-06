@@ -1,4 +1,8 @@
 package com.example.rickandmorty.data.api
+import com.example.rickandmorty.data.model.CharacterResponse
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import retrofit2.Response
 import javax.inject.Inject
 
 class ApiRepository @Inject constructor(
@@ -8,9 +12,10 @@ class ApiRepository @Inject constructor(
 
   suspend fun fetchPokemonList(
     page: Int
-  ) = apiService.fetchPokemonList(
-    page
-  )
+  ): Response<CharacterResponse>
+  =
+        apiService.fetchPokemonList(page)
+
 
 
 }

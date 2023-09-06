@@ -1,5 +1,5 @@
 
-package com.example.rickandmorty.ui.adapter
+package com.example.rickandmorty.view.adapter
 
 import android.os.SystemClock
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
 import com.example.rickandmorty.data.model.Results
-import com.example.rickandmorty.ui.adapter.PokemonAdapter.PokemonViewHolder
-import com.example.rickandmortycharacterviewer_androidprojecttask.R
-import com.example.rickandmortycharacterviewer_androidprojecttask.databinding.ItemPokemonBinding
+import com.example.rickandmorty.view.adapter.PokemonAdapter.PokemonViewHolder
+import com.example.rickandmorty.R
+import com.example.rickandmorty.databinding.ItemPokemonBinding
 //import com.skydoves.pokedex.ui.details.DetailActivity
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {

@@ -15,6 +15,6 @@ interface ApiService {
   @GET("character")
   suspend fun fetchPokemonList(
     @Query("page") page: Int = 1,
-  ): ApiResponse<CharacterResponse>
+  ): Response<CharacterResponse>
 
 }

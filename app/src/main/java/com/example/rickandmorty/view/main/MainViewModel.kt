@@ -1,5 +1,5 @@
 
-package com.example.rickandmorty.ui.main
+package com.example.rickandmorty.view.main
 
 import androidx.annotation.MainThread
 import androidx.databinding.ObservableBoolean
@@ -9,8 +9,10 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.switchMap
 import com.example.rickandmorty.base.LiveCoroutinesViewModel
 import com.example.rickandmorty.data.model.Results
+import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
 import javax.inject.Inject
+@HiltViewModel
 
 class MainViewModel @Inject constructor(
   private val mainRepository: MainRepository

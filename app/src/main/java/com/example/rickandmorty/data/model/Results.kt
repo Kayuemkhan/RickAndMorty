@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
-@Entity
+@Entity(tableName = "Results")
 @Parcelize
 @JsonClass(generateAdapter = true)
 data class Results(

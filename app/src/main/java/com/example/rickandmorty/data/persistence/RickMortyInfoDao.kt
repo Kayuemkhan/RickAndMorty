@@ -7,12 +7,12 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.rickandmorty.data.model.Info
 
-@Dao
-interface RickMortyInfoDao {
-
-  @Insert(onConflict = OnConflictStrategy.REPLACE)
-  suspend fun insertPokemonInfo(info: Info)
-
-  @Query("SELECT * FROM Info WHERE name = :name_")
-  suspend fun getPokemonInfo(name_: String): Info?
-}
+//@Dao
+//interface RickMortyInfoDao {
+//
+//  @Insert(onConflict = OnConflictStrategy.REPLACE)
+//  suspend fun insertPokemonInfo(info: Info)
+//
+//  @Query("SELECT * FROM info")
+//  suspend fun getPokemonInfo(): Info?
+//}

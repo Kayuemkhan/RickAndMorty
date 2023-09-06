@@ -6,7 +6,6 @@ import android.os.Build
 import androidx.room.Room
 import com.example.rickandmorty.data.persistence.AppDatabase
 import com.example.rickandmorty.data.persistence.RickMortyDao
-import com.example.rickandmorty.data.persistence.RickMortyInfoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,9 +32,9 @@ object DatabaseModule {
         return appDatabase.rickMortyDao()
     }
 
-    @Provides
-    @Singleton
-    fun provideRickMortyInfoDao(appDatabase: AppDatabase): RickMortyInfoDao {
-        return appDatabase.rickMortyInfoDao()
-    }
+//    @Provides
+//    @Singleton
+//    fun provideRickMortyInfoDao(appDatabase: AppDatabase): RickMortyInfoDao {
+//        return appDatabase.rickMortyInfoDao()
+//    }
 }
