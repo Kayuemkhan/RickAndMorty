@@ -11,7 +11,6 @@ import com.example.rickandmorty.data.model.Results
 import com.example.rickandmorty.view.adapter.PokemonAdapter.PokemonViewHolder
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ItemPokemonBinding
-//import com.skydoves.pokedex.ui.details.DetailActivity
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
 
@@ -24,7 +23,7 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
       DataBindingUtil.inflate<ItemPokemonBinding>(inflater, R.layout.item_pokemon, parent, false)
     return PokemonViewHolder(binding).apply {
       binding.root.setOnClickListener {
-        val position = adapterPosition.takeIf { it != NO_POSITION }
+        adapterPosition.takeIf { it != NO_POSITION }
           ?: return@setOnClickListener
         val currentClickedAt = SystemClock.elapsedRealtime()
         if (currentClickedAt - onClickedAt > binding.transformationLayout.duration) {
@@ -38,7 +37,7 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
   fun addPokemonList(pokemonList: List<Results>) {
     val previous = items.size
     items.addAll(pokemonList)
-    notifyItemRangeChanged(previous, pokemonList.size)
+    notifyItemRangeChanged(0, pokemonList.size)
   }
 
   override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {

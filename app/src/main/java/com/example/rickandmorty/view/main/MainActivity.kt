@@ -14,7 +14,7 @@ import com.skydoves.transformationlayout.onTransformationStartContainer
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity :  BindingActivity<ActivityMainBinding>(R.layout.activity_main)  {
+class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main) {
 
   @get:VisibleForTesting
   internal val viewModel: MainViewModel by viewModels()
@@ -22,19 +22,9 @@ class MainActivity :  BindingActivity<ActivityMainBinding>(R.layout.activity_mai
   override fun onCreate(savedInstanceState: Bundle?) {
     onTransformationStartContainer()
     super.onCreate(savedInstanceState)
-    binding.apply {
-      lifecycleOwner = this@MainActivity
+    binding {
       adapter = PokemonAdapter()
-      viewModel.fetchPokemonList(1).apply {
-        viewModel.pokemonListLiveData.observe(this@MainActivity) { pokemonList ->
-          println("List")
-          println(pokemonList)// Assuming you have a submitList method in your adapter
-        }
-      }
+      vm = viewModel
     }
   }
-  override fun onBackPressed() {
-
-  }
-
 }

@@ -4,10 +4,7 @@ package com.example.rickandmorty.view.main
 import androidx.annotation.WorkerThread
 import com.example.rickandmorty.data.api.ApiRepository
 import com.example.rickandmorty.data.persistence.RickMortyDao
-import com.skydoves.sandwich.message
-import com.skydoves.sandwich.onError
-import com.skydoves.sandwich.onException
-import com.skydoves.sandwich.suspendOnSuccess
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -32,25 +29,19 @@ class MainRepository @Inject constructor(
 
 
       response.let {
+        println("response")
+        println(Gson().toJson(response.body()))
+        pokemons = response.body()!!.results
+        pokemons.forEach { pokemon -> pokemon.id = page }
+        pokemonDao.insertPokemonList(pokemons)
+        emit(pokemons)
+        onSuccess()
+
       }
 
 
 
-//        data.let {
-//            response ->
-//            pokemons = response.results
-//            pokemons.forEach { pokemon -> pokemon.id = page }
-//            pokemonDao.insertPokemonList(pokemons)
-//            emit(pokemons)
-//            onSuccess()
-//          }
-//        }
-//        .onError {
-//          onError(message())
-//        }
-//        .onException {
-//          onError(message())
-//        }
+
     } else {
       emit(pokemons)
       onSuccess()
