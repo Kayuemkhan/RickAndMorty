@@ -1,4 +1,4 @@
-package com.example.rickandmortycharacterviewer_androidprojecttask
+package com.example.rickandmorty
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -20,7 +20,7 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals(
-            "com.example.rickandmortycharacterviewer_androidprojecttask",
+            "com.example.rickandmorty",
             appContext.packageName
         )
     }

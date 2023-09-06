@@ -1,1 +1,2 @@
-# RickAndMortyCharacterViewer_AndroidProjectTask
+# RickAndMorty
+
