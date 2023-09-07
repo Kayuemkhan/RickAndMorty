@@ -84,3 +84,9 @@ For more information, check out the [Guide to Android app modularization](https:
 
 
 RickMorty using the [RickMortyAPI](https://rickandmortyapi.com/) for constructing RESTful API.<br> PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
+
+## What Remaining?
+
+- [ ] Full unit testing coverage [Only data layer done.]
+- [ ] UI Testing coverage.
+- [ ] Pagination
