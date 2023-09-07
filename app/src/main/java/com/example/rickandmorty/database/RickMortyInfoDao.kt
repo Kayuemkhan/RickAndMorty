@@ -14,6 +14,6 @@ interface RickMortyInfoDao {
   @Insert(onConflict = OnConflictStrategy.REPLACE)
   suspend fun insertPokemonInfo(info: CharacterDetailsResponse)
 
-  @Query("SELECT * FROM info")
+  @Query("SELECT * FROM character_details")
   suspend fun getRickMortyInfo(): CharacterDetailsResponse?
 }

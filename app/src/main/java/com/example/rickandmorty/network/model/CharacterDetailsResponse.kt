@@ -9,6 +9,7 @@ import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "character_details")
+
 @Parcelize
 data class CharacterDetailsResponse (
 
