@@ -6,19 +6,12 @@
 
     >
 
-  <data>
-
-    <variable
-        name="pokemon"
-        type="com.example.rickandmorty.model.Results" />
-
-  </data>
-
   <com.skydoves.transformationlayout.TransformationLayout
       android:id="@+id/transformationLayout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:transformation_duration="550">
+      app:transformation_duration="550"
+      >
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -29,14 +22,16 @@
         android:foreground="?attr/selectableItemBackground"
         app:cardBackgroundColor="@color/white_12"
         app:cardCornerRadius="14dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        >
 
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:foreground="?attr/selectableItemBackground"
           tools:background="@color/background800"
-          tools:ignore="UnusedAttribute">
+          tools:ignore="UnusedAttribute"
+          >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
@@ -66,33 +61,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
-            tools:text="Bulbasaur" />
+            tools:text="Bulbasaur"
+            />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/baseline_brightness_1_24"
             android:elevation="4dp"
             android:gravity="center"
             android:maxLines="1"
             android:paddingBottom="12dp"
-            android:textColor="@color/white"
             android:text="@{pokemon.status}"
-            android:textStyle="bold"
 
-            android:drawableStart="@drawable/baseline_brightness_1_24"
+            android:textColor="@color/white"
 
-            android:drawablePadding="10dp"
             android:textSize="12sp"
+            android:textStyle="bold"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
-            tools:text="Bulbasaur" />
+            tools:text="Bulbasaur"
+            />
 
       </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
   </com.skydoves.transformationlayout.TransformationLayout>
+
+  <data>
+
+    <variable
+        name="pokemon"
+        type="com.example.rickandmorty.model.Results"
+        />
+
+  </data>
 
 </layout>
