@@ -1,11 +1,15 @@
 
 package com.example.rickandmorty.binding
 
+import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.view.adapter.PokemonAdapter
 import com.example.rickandmorty.view.main.MainViewModel
+import com.google.gson.Gson
 import com.skydoves.bindables.BindingListAdapter
 
 //@BindingAdapter("adapter")
@@ -31,24 +35,26 @@ object RecyclerViewBinding {
     }
   }
 
-//  @JvmStatic
-//  @BindingAdapter("submitList")
-//  fun bindSubmitList(view: RecyclerView, itemList: List<Any>?) {
-//    view.adapter.whatIfNotNullAs<BindingListAdapter<Any, *>> { adapter ->
-//      adapter.submitList(itemList)
-//    }
-//  }
 
-//  @JvmStatic
-//  @BindingAdapter("paginationPokemonList")
-//  fun paginationPokemonList(view: RecyclerView, viewModel: MainViewModel) {
-//    RecyclerViewPaginator(
-//      recyclerView = view,
-//      isLoading = { viewModel.isLoading },
-//      loadMore = { viewModel.fetchNextPokemonList() },
-//      onLast = { false }
-//    ).run {
-//      threshold = 8
-//    }
-//  }
+
+
+
+  @JvmStatic
+  @BindingAdapter("adapterPokemonList")
+  fun bindAdapterPokemonList(view: RecyclerView, pokemonList: List<Results>?) {
+    pokemonList.let {
+      if (it != null) {
+        println("ITFound")
+        println(Gson().toJson(it))
+        (view.adapter as? PokemonAdapter)?.addPokemonList(it)
+      }
+    }
+  }
+
+
+  @JvmStatic
+  @BindingAdapter("loading")
+  fun setGone(view: View, isGone: Boolean) {
+    view.visibility = if (isGone) View.GONE else View.VISIBLE
+  }
 }
