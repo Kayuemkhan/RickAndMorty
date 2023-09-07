@@ -2,12 +2,8 @@
 package com.example.rickandmorty.network
 
 import com.example.rickandmorty.MainCoroutinesRule
-import com.example.rickandmorty.network.ApiAbstract
 import com.example.rickandmorty.network.service.ApiRepository
 import com.example.rickandmorty.network.service.ApiService
-import com.nhaarman.mockitokotlin2.mock
-import com.skydoves.pokedex.MainCoroutinesRule
-import com.skydoves.sandwich.ApiResponse
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.hamcrest.CoreMatchers.`is`
@@ -20,7 +16,7 @@ import retrofit2.Response
 import java.io.IOException
 
 @ExperimentalCoroutinesApi
-class PokedexServiceTest : ApiAbstract<ApiService>() {
+class RickAndMortyServiceTest : ApiAbstract<ApiService>() {
 
   private lateinit var service: ApiService
   private val client: ApiRepository = mock()
