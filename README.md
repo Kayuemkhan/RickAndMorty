@@ -1,14 +1,15 @@
 
-<h1 align="center">RickMorty</h1>  
+
+<h1 align="center">RickMorty</h1>    
+
+<p align="center">      
+🗡️ RickMorty demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.    
+</p>    
+</br>    
 
 <p align="center">    
-🗡️ RickMorty demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.  
-</p>  
-</br>  
-
-<p align="center">  
-<img src="/previews/screenshot.png"/>  
-</p>  
+<img src="/previews/screenshot.png"/>    
+</p>    
 
 
 
@@ -28,7 +29,6 @@
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit): Construct the REST APIs and paging network data.
 - [Sandwich](https://github.com/skydoves/Sandwich): Construct a lightweight and modern response interface to handle network payload for Android.
 - [Moshi](https://github.com/square/moshi/): A modern JSON library for Kotlin and Java.
-- [WhatIf](https://github.com/skydoves/whatif): Check nullable objects and empty collections more fluently.
 - [Bundler](https://github.com/skydoves/bundler): Android Intent & Bundle extensions, which insert and retrieve values elegantly.
 - [ksp](https://github.com/google/ksp): Kotlin Symbol Processing API.
 - [Turbine](https://github.com/cashapp/turbine): A small testing library for kotlinx.coroutines Flow.
@@ -71,7 +71,7 @@ The UI layer consists of UI elements to configure screens that could interact wi
 
 The data Layer consists of repositories, which include business logic, such as querying data from the local database and requesting remote data from the network. It is implemented as an offline-first source of business logic and follows the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) principle.<br>
 
-**RickMorty** is an offline-first app is an app that is able to perform all, or a critical subset of its core functionality without access to the internet.   
+**RickMorty** is an offline-first app is an app that is able to perform all, or a critical subset of its core functionality without access to the internet.     
 So users don't need to be up-to-date on the network resources every time and it will decrease users' data consumption. For further information, you can check out [Build an offline-first app](https://developer.android.com/topic/architecture/data-layer/offline-first).
 
 ## Modularization
@@ -92,7 +92,4 @@ For more information, check out the [Guide to Android app modularization](https:
 ## Open API
 
 
-RickMorty using the [RickMortyAPI](https://rickandmortyapi.com/) for constructing RESTful API.<br>  
-PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.  
-  
-
+RickMorty using the [RickMortyAPI](https://rickandmortyapi.com/) for constructing RESTful API.<br> PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.

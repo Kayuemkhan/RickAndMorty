@@ -80,7 +80,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header"
-        tools:text="skydoves" />
+        tools:text="details" />
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="@{pokemon.gender}"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:translationZ="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="details" />
 
       <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/header"
