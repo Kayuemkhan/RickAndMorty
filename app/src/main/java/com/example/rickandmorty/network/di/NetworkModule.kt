@@ -107,6 +107,6 @@ object NetworkModule {
   @Singleton
   @Provides
   fun provideApiRepository(apiResponse: ApiResponse, apiService: ApiService): ApiRepository {
-    return ApiRepository(apiService, apiResponse)
+    return ApiRepository(apiService)
   }
 }
