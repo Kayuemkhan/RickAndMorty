@@ -30,9 +30,9 @@ object DatabaseModule {
         return appDatabase.rickMortyDao()
     }
 
-    @Provides
-    @Singleton
-    fun provideRickMortyInfoDao(appDatabase: AppDatabase): CharacterDetailsResponse {
-        return appDatabase.rickMortyInfoDao()
-    }
+//    @Provides
+//    @Singleton
+//    fun provideRickMortyInfoDao(appDatabase: AppDatabase): CharacterDetailsResponse {
+//        return appDatabase.rickMortyInfoDao()
+//    }
 }

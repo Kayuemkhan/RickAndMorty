@@ -20,22 +20,19 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class DetailActivity : BindingActivity<ActivityDetailBinding>(R.layout.activity_detail) {
 
-  @set:Inject
-  internal lateinit var detailViewModelFactory: DetailViewModel.AssistedFactory
-
   @get:VisibleForTesting
-  internal val viewModel: DetailViewModel by viewModels {
-    DetailViewModel.provideFactory(detailViewModelFactory, pokemonItem.id!!)
-  }
+  internal val viewModel: DetailViewModel by viewModels()
 
   val pokemonItem: Results = requireNotNull(intent.getParcelableExtra(EXTRA_POKEMON))
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    TransformationCompat.onTransformationEndContainerApplyParams(this)
+    onTransformationEndContainerApplyParams(this)
     super.onCreate(savedInstanceState)
     binding {
       pokemon = pokemonItem
-      vm = viewModel
+      vm = viewModel.apply {
+        fetchPokemonInfo(pokemonItem.id!!)
+      }
     }
   }
 

@@ -3,13 +3,13 @@ package com.example.rickandmorty.network.model
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "character_details")
-
 @Parcelize
 data class CharacterDetailsResponse (
 

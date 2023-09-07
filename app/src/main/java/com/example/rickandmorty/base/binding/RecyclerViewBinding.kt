@@ -59,7 +59,8 @@ object RecyclerViewBinding {
     view.visibility = if (isGone) View.GONE else View.VISIBLE
   }
   @JvmStatic
-  @BindingAdapter("drawableWithTint") open fun setDrawableWithTint(
+  @BindingAdapter("drawableWithTint")
+  fun setDrawableWithTint(
     textView: TextView,
     drawableResId: Int,
     tintColorResId: Int

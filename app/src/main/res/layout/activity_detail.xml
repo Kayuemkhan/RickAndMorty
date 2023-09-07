@@ -104,7 +104,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:paletteImage="@{pokemon.image}"
         app:paletteView="@{header}"
-        app:toast="@{vm.toastMessage}" />
+          />
 
 
 

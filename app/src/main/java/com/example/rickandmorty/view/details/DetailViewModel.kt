@@ -2,26 +2,31 @@
 
 package com.example.rickandmorty.view.details
 
+import androidx.annotation.MainThread
 import androidx.databinding.Bindable
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.data.repository.DetailRepository
 import com.example.rickandmorty.network.model.CharacterDetailsResponse
 import com.skydoves.bindables.BindingViewModel
 import com.skydoves.bindables.asBindingProperty
 import com.skydoves.bindables.bindingProperty
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedInject
-import kotlinx.coroutines.flow.Flow
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import timber.log.Timber
+import javax.inject.Inject
 
-class DetailViewModel @AssistedInject constructor(
+
+@HiltViewModel
+
+class DetailViewModel @Inject constructor(
   detailRepository: DetailRepository,
-  @Assisted private val id: Int
-) : BindingViewModel() {
+) : BindingViewModel()
+{
+
+  private var id: MutableLiveData<Int> = MutableLiveData()
 
   @get:Bindable
   var isLoading: Boolean by bindingProperty(true)
@@ -34,9 +39,10 @@ class DetailViewModel @AssistedInject constructor(
 
   private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
 
-  private val pokemonInfoFlow= pokemonFetchingIndex.flatMapLatest {_ ->
+  @OptIn(ExperimentalCoroutinesApi::class)
+  private val pokemonInfoFlow= pokemonFetchingIndex.flatMapLatest { _ ->
     detailRepository.fetchPokemonInfo(
-      name = id,
+      name = id.value!!,
       onSuccess = { isLoading = false },
       onError = { toastMessage = it }
     )
@@ -49,21 +55,8 @@ class DetailViewModel @AssistedInject constructor(
     Timber.d("init DetailViewModel")
   }
 
-  @dagger.assisted.AssistedFactory
-  interface AssistedFactory {
-    fun create(pokemonName: Int): DetailViewModel
-  }
-
-  companion object {
-    fun provideFactory(
-      assistedFactory: AssistedFactory,
-      pokemonName: Int
-    ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-
-      @Suppress("UNCHECKED_CAST")
-      override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return assistedFactory.create(pokemonName) as T
-      }
-    }
+  @MainThread
+  fun fetchPokemonInfo(name: Int) {
+    id.value = name
   }
 }

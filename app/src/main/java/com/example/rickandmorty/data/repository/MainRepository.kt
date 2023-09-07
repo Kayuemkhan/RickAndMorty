@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(
-  private val pokedexClient: ApiRepository,
+  private val apiRepository: ApiRepository,
   private val pokemonDao: RickMortyDao
 ) : Repository {
 
@@ -24,7 +24,7 @@ class MainRepository @Inject constructor(
   ) = flow {
     var pokemons = pokemonDao.getPokemonList()
     if (pokemons.isEmpty()) {
-      val response = pokedexClient.fetchPokemonList(1)
+      val response = apiRepository.fetchPokemonList(1)
 
 
       response.let {

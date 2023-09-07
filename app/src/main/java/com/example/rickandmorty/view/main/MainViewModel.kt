@@ -10,6 +10,7 @@ import com.skydoves.bindables.BindingViewModel
 import com.skydoves.bindables.asBindingProperty
 import com.skydoves.bindables.bindingProperty
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import timber.log.Timber
@@ -29,6 +30,7 @@ class MainViewModel @Inject constructor(
     private set
 
   private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
+  @OptIn(ExperimentalCoroutinesApi::class)
   private val pokemonListFlow = pokemonFetchingIndex.flatMapLatest { _ ->
     mainRepository.fetchPokemonList(
 //      page = page,
@@ -44,10 +46,5 @@ class MainViewModel @Inject constructor(
     Timber.d("init MainViewModel")
   }
 
-  @MainThread
-  fun fetchNextPokemonList() {
-    if (!isLoading) {
-      pokemonFetchingIndex.value++
-    }
-  }
+
 }
