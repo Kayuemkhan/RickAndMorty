@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.model.Results
 import com.example.rickandmorty.view.adapter.PokemonAdapter.PokemonViewHolder
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ItemPokemonBinding
+import com.example.rickandmorty.view.details.DetailActivity
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
 
@@ -27,7 +28,7 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
           ?: return@setOnClickListener
         val currentClickedAt = SystemClock.elapsedRealtime()
         if (currentClickedAt - onClickedAt > binding.transformationLayout.duration) {
-//          DetailActivity.startActivity(binding.transformationLayout, items[position])
+          DetailActivity.startActivity(binding.transformationLayout, items[position])
           onClickedAt = currentClickedAt
         }
       }

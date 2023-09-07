@@ -4,11 +4,13 @@ package com.example.rickandmorty.view.main
 import androidx.annotation.MainThread
 import androidx.databinding.Bindable
 import androidx.lifecycle.viewModelScope
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.data.repository.MainRepository
+import com.example.rickandmorty.model.Results
 import com.skydoves.bindables.BindingViewModel
 import com.skydoves.bindables.asBindingProperty
 import com.skydoves.bindables.bindingProperty
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import timber.log.Timber
@@ -28,9 +30,10 @@ class MainViewModel @Inject constructor(
     private set
 
   private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
-  private val pokemonListFlow = pokemonFetchingIndex.flatMapLatest { page ->
+  @OptIn(ExperimentalCoroutinesApi::class)
+  private val pokemonListFlow = pokemonFetchingIndex.flatMapLatest { _ ->
     mainRepository.fetchPokemonList(
-      page = page,
+//      page = page,
       onSuccess = { isLoading = true },
       onError = { toastMessage = it }
     )
@@ -43,10 +46,5 @@ class MainViewModel @Inject constructor(
     Timber.d("init MainViewModel")
   }
 
-  @MainThread
-  fun fetchNextPokemonList() {
-    if (!isLoading) {
-      pokemonFetchingIndex.value++
-    }
-  }
+
 }
