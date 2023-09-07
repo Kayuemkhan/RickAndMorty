@@ -1,9 +1,9 @@
-package com.example.rickandmorty.data.di
+package com.example.rickandmorty.network.di
 
 import android.content.Context
-import com.example.rickandmorty.data.api.ApiRepository
-import com.example.rickandmorty.data.api.ApiResponse
-import com.example.rickandmorty.data.api.ApiService
+import com.example.rickandmorty.network.service.ApiRepository
+import com.example.rickandmorty.network.model.ApiResponse
+import com.example.rickandmorty.network.service.ApiService
 import com.example.rickandmorty.utils.Constant
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson

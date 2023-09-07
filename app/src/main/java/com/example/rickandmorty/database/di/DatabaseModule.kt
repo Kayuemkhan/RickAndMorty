@@ -1,15 +1,12 @@
-package com.example.rickandmorty.data.di
+package com.example.rickandmorty.database.di
 
 import android.app.Application
-import android.content.Context
-import android.os.Build
 import androidx.room.Room
-import com.example.rickandmorty.data.persistence.AppDatabase
-import com.example.rickandmorty.data.persistence.RickMortyDao
+import com.example.rickandmorty.database.AppDatabase
+import com.example.rickandmorty.database.RickMortyDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.model
+package com.example.rickandmorty.model
 
 import android.os.Parcelable
 import androidx.room.Entity

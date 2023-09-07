@@ -1,16 +1,17 @@
 
-package com.example.rickandmorty.binding
+package com.example.rickandmorty.base.binding
 
 import android.view.View
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.model.Results
 import com.example.rickandmorty.view.adapter.PokemonAdapter
-import com.example.rickandmorty.view.main.MainViewModel
 import com.google.gson.Gson
-import com.skydoves.bindables.BindingListAdapter
 
 //@BindingAdapter("adapter")
 //fun bindAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {
@@ -56,5 +57,21 @@ object RecyclerViewBinding {
   @BindingAdapter("loading")
   fun setGone(view: View, isGone: Boolean) {
     view.visibility = if (isGone) View.GONE else View.VISIBLE
+  }
+  @JvmStatic
+  @BindingAdapter("drawableWithTint") open fun setDrawableWithTint(
+    textView: TextView,
+    drawableResId: Int,
+    tintColorResId: Int
+  ) {
+    val drawable = ContextCompat.getDrawable(textView.context, drawableResId)
+    if (drawable != null) {
+      val wrappedDrawable = DrawableCompat.wrap(drawable)
+      DrawableCompat.setTint(
+        wrappedDrawable,
+        ContextCompat.getColor(textView.context, tintColorResId)
+      )
+      textView.setCompoundDrawablesWithIntrinsicBounds(wrappedDrawable, null, null, null)
+    }
   }
 }

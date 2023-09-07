@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.di
+package com.example.rickandmorty.base.di
 
 import android.app.Application
 import android.content.Context

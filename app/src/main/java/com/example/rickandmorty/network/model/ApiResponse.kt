@@ -1,12 +1,10 @@
-package com.example.rickandmorty.data.api
+package com.example.rickandmorty.network.model
 
 import android.content.Context
 import android.util.Log
-import com.example.rickandmorty.data.model.CharacterResponse
+import com.example.rickandmorty.network.model.CharacterResponse
 import com.example.rickandmorty.utils.AppUtils
 import com.example.rickandmorty.utils.Constant.TAG
-import com.skydoves.sandwich.ApiResponse
-import com.skydoves.sandwich.isSuccess
 import org.json.JSONObject
 import retrofit2.Response
 import timber.log.Timber

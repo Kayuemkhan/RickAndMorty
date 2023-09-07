@@ -1,7 +1,6 @@
-package com.example.rickandmorty.data.api
-import com.example.rickandmorty.data.model.CharacterResponse
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+package com.example.rickandmorty.network.service
+import com.example.rickandmorty.network.model.ApiResponse
+import com.example.rickandmorty.network.model.CharacterResponse
 import retrofit2.Response
 import javax.inject.Inject
 

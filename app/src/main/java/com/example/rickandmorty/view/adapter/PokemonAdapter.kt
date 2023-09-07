@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.NO_POSITION
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.model.Results
 import com.example.rickandmorty.view.adapter.PokemonAdapter.PokemonViewHolder
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ItemPokemonBinding

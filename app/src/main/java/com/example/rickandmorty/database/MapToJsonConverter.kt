@@ -1,8 +1,8 @@
-package com.example.rickandmorty.data.persistence
+package com.example.rickandmorty.database
 
 import androidx.room.TypeConverter
-import com.example.rickandmorty.data.model.Info
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.model.Info
+import com.example.rickandmorty.model.Results
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

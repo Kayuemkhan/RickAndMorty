@@ -4,7 +4,8 @@ package com.example.rickandmorty.view.main
 import androidx.annotation.MainThread
 import androidx.databinding.Bindable
 import androidx.lifecycle.viewModelScope
-import com.example.rickandmorty.data.model.Results
+import com.example.rickandmorty.data.repository.MainRepository
+import com.example.rickandmorty.model.Results
 import com.skydoves.bindables.BindingViewModel
 import com.skydoves.bindables.asBindingProperty
 import com.skydoves.bindables.bindingProperty
@@ -28,9 +29,9 @@ class MainViewModel @Inject constructor(
     private set
 
   private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
-  private val pokemonListFlow = pokemonFetchingIndex.flatMapLatest { page ->
+  private val pokemonListFlow = pokemonFetchingIndex.flatMapLatest { _ ->
     mainRepository.fetchPokemonList(
-      page = page,
+//      page = page,
       onSuccess = { isLoading = true },
       onError = { toastMessage = it }
     )

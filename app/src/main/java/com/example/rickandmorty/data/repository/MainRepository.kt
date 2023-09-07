@@ -1,9 +1,9 @@
 
-package com.example.rickandmorty.view.main
+package com.example.rickandmorty.data.repository
 
 import androidx.annotation.WorkerThread
-import com.example.rickandmorty.data.api.ApiRepository
-import com.example.rickandmorty.data.persistence.RickMortyDao
+import com.example.rickandmorty.network.service.ApiRepository
+import com.example.rickandmorty.database.RickMortyDao
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
@@ -19,20 +19,18 @@ class MainRepository @Inject constructor(
 
   @WorkerThread
   suspend fun fetchPokemonList(
-    page: Int,
     onSuccess: () -> Unit,
     onError: (String) -> Unit
   ) = flow {
-    var pokemons = pokemonDao.getPokemonList(page)
+    var pokemons = pokemonDao.getPokemonList()
     if (pokemons.isEmpty()) {
-      val response = pokedexClient.fetchPokemonList(page = page)
+      val response = pokedexClient.fetchPokemonList(1)
 
 
       response.let {
         println("response")
         println(Gson().toJson(response.body()))
         pokemons = response.body()!!.results
-        pokemons.forEach { pokemon -> pokemon.id = page }
         pokemonDao.insertPokemonList(pokemons)
         emit(pokemons)
         onSuccess()

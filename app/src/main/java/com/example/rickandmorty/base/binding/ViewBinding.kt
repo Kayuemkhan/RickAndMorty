@@ -1,5 +1,5 @@
 
-package com.example.rickandmorty.binding
+package com.example.rickandmorty.base.binding
 
 import android.app.Activity
 import android.graphics.Color
@@ -87,4 +87,8 @@ fun bindOnBackPressed(view: View, finish: Boolean) {
       context.onBackPressed()
     }
   }
+
+
 }
+
+

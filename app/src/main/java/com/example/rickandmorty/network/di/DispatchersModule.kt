@@ -1,5 +1,5 @@
 
-package com.example.rickandmorty.data.di
+package com.example.rickandmorty.network.di
 
 import javax.inject.Qualifier
 import kotlin.annotation.AnnotationRetention.RUNTIME

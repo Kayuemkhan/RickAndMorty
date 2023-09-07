@@ -1,11 +1,11 @@
 
-package com.example.rickandmorty.data.persistence
+package com.example.rickandmorty.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.rickandmorty.data.model.Info
+import com.example.rickandmorty.model.Info
 
 //@Dao
 //interface RickMortyInfoDao {

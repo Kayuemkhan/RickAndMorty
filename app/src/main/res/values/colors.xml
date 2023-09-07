@@ -44,4 +44,6 @@
     <color name="ground">#AD7235</color>
     <color name="md_blue_100">#81D4fA</color>
     <color name="md_blue_200">#0091EA</color>
+    <color name="greenTint">#00FF00</color>
+    <color name="redTint">#FF0000</color>
 </resources>

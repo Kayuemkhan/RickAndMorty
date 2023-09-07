@@ -1,4 +1,4 @@
-package com.example.rickandmorty.binding
+package com.example.rickandmorty.base.binding
 
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
