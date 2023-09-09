@@ -7,9 +7,7 @@
 </p>    
 </br>    
 
-<p align="center">    
-<img src="/previews/screenshot.png"/>    
-</p>    
+  ![preview](previews/preview.gif)
 
 
 
@@ -39,7 +37,8 @@
 - [Timber](https://github.com/JakeWharton/timber): A logger with a small, extensible API.
 
 ## Architecture
-**RickMorty** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
+**RickMorty** is based on the MVVM architecture and the Repository pattern, which follows the
+[Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
 ![architecture](figure/figure0.png)
 
