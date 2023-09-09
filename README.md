@@ -1,14 +1,17 @@
 
-
 <h1 align="center">RickMorty</h1>    
 
 <p align="center">      
 🗡️ RickMorty demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.    
-</p>    
-</br>    
+</p>     
 
   ![preview](previews/preview.gif)
 
+
+
+## Project Requirements
+  - Java 17
+  - The latest Android Studio Hedgehog or above
 
 
 ## Tech stack & Open-source libraries
