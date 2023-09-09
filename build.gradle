@@ -43,7 +43,7 @@ ext {
     materialVersion = '1.7.0-alpha02'
     mockitoVersion = '2.25.0'
     recyclerViewVersion = '1.2.1'
-    robolectricVersion = '4.5'
+    robolectricVersion = '4.10'
     roomVersion = '2.4.2'
     rulesVersion = '1.0.1'
     timberVersion = '4.7.1'

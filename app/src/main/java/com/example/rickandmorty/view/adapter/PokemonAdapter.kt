@@ -12,6 +12,7 @@ import com.example.rickandmorty.view.adapter.PokemonAdapter.PokemonViewHolder
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ItemPokemonBinding
 import com.example.rickandmorty.view.details.DetailActivity
+import com.google.gson.Gson
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
 
@@ -28,6 +29,9 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonViewHolder>() {
           ?: return@setOnClickListener
         val currentClickedAt = SystemClock.elapsedRealtime()
         if (currentClickedAt - onClickedAt > binding.transformationLayout.duration) {
+
+          println("items")
+          println(Gson().toJson(items[position]))
           DetailActivity.startActivity(binding.transformationLayout, items[position])
           onClickedAt = currentClickedAt
         }

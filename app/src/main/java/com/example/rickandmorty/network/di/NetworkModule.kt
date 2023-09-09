@@ -1,5 +1,6 @@
 package com.example.rickandmorty.network.di
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.example.rickandmorty.network.service.ApiRepository
 import com.example.rickandmorty.network.model.ApiResponse
@@ -47,13 +48,16 @@ object NetworkModule {
 
     // Create a trust manager that does not validate certificate chains
     val trustAllCerts = arrayOf<TrustManager>(
+      @SuppressLint("CustomX509TrustManager")
       object : X509TrustManager {
+        @SuppressLint("TrustAllX509TrustManager")
         @Throws(CertificateException::class) override fun checkClientTrusted(
           chain: Array<X509Certificate>,
           authType: String
         ) {
         }
 
+        @SuppressLint("TrustAllX509TrustManager")
         override fun checkServerTrusted(
           chain: Array<X509Certificate>,
           authType: String
@@ -104,9 +108,9 @@ object NetworkModule {
     return ApiResponse(context)
   }
 
-  @Singleton
-  @Provides
-  fun provideApiRepository(apiResponse: ApiResponse, apiService: ApiService): ApiRepository {
-    return ApiRepository(apiService)
-  }
+//  @Singleton
+//  @Provides
+//  fun provideApiRepository(apiResponse: ApiResponse, apiService: ApiService): ApiRepository {
+//    return ApiRepository(apiService)
+//  }
 }

@@ -13,19 +13,6 @@ import com.example.rickandmorty.model.Results
 import com.example.rickandmorty.view.adapter.PokemonAdapter
 import com.google.gson.Gson
 
-//@BindingAdapter("adapter")
-//fun bindAdapter(view: RecyclerView, adapter: RecyclerView.Adapter<*>) {
-//  view.adapter = adapter
-//}
-//
-//
-//
-//@BindingAdapter("adapterPokemonList")
-//fun bindAdapterPokemonList(view: RecyclerView, pokemonList: List<Results>?) {
-//  pokemonList.let {
-//    (view.adapter as? PokemonAdapter)?.addPokemonList(it!!)
-//  }
-//}
 object RecyclerViewBinding {
 
   @JvmStatic
