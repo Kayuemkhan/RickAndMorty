@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.room.Room
 import com.example.rickandmorty.database.AppDatabase
 import com.example.rickandmorty.database.RickMortyDao
-import com.example.rickandmorty.network.model.CharacterDetailsResponse
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

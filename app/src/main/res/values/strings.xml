@@ -3,4 +3,9 @@
     <string name="title">RickMorty</string>
   <string name="base_stats">Base Stats</string>
   <string name="hp">Hp</string>
+    <string name="status">Status:</string>
+    <string name="gender">Gender:</string>
+    <string name="species">Species</string>
+    <string name="origin">Origin:</string>
+    <string name="location">Location</string>
 </resources>

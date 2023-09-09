@@ -20,12 +20,7 @@ import com.skydoves.rainbow.Rainbow
 import com.skydoves.rainbow.RainbowOrientation
 import com.skydoves.rainbow.color
 
-//@BindingAdapter("toast")
-//fun bindToast(view: View, text: String?) {
-//  text.isNullOrEmpty().let {
-//    Toast.makeText(view.context, it, Toast.LENGTH_SHORT).show()
-//  }
-//}
+
 
 @BindingAdapter("paletteImage", "paletteCard")
 fun bindLoadImagePalette(view: AppCompatImageView, url: String, paletteCard: MaterialCardView) {
@@ -74,10 +69,6 @@ fun bindLoadImagePaletteView(view: AppCompatImageView, url: String, paletteView:
     ).into(view)
 }
 
-//@BindingAdapter("gone")
-//fun bindGone(view: View, shouldBeGone: Boolean) {
-//  view.gone(shouldBeGone)
-//}
 
 @BindingAdapter("onBackPressed")
 fun bindOnBackPressed(view: View, finish: Boolean) {

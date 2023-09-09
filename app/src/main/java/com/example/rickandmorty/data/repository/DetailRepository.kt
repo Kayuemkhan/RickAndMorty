@@ -24,8 +24,9 @@ class DetailRepository @Inject constructor(
       val response = apiRepository.fetchPokemonInfo(name)
       response.let {
         val pokemonInfo = response.body()
-        println("responseAA")
+        println("pokemonInforesponse")
         println(Gson().toJson(response.body()))
+
         emit(pokemonInfo)
         onSuccess()
 

@@ -5,6 +5,7 @@ import com.example.rickandmorty.network.model.CharacterDetailsResponse
 import com.example.rickandmorty.network.model.CharacterResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -13,9 +14,9 @@ interface ApiService {
     @Query("page") page: Int = 1,
   ): Response<CharacterResponse>
 
-  @GET("character")
+  @GET("character/{characterId}")
   suspend fun fetchPokemonInfo(
-    @Query("") page: Int = 1,
+    @Path("characterId") characterId: Int
   ): Response<CharacterDetailsResponse>
 
 }
