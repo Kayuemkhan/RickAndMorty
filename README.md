@@ -7,7 +7,8 @@
 </p>    
 </br>    
 
-  ![preview](previews/preview.gif)
+
+<img src="/previews/preview.gif" width="250" height="250"/>
 
 
 
