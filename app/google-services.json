@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "784421476071",
+    "firebase_url": "https://notification-whole-day-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "notification-whole-day",
+    "storage_bucket": "notification-whole-day.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784421476071:android:40bfa2ca4fe811c041b442",
+        "android_client_info": {
+          "package_name": "com.example.rickandmorty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784421476071-g60l7ludo8otlcdkorsp05ekmg0u2koq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrsDhGDg5mPMDNd8ATPMjoUi5QRZUHv9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784421476071-g60l7ludo8otlcdkorsp05ekmg0u2koq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

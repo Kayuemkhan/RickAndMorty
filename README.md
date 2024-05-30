@@ -5,7 +5,6 @@
 <p align="center">      
 🗡️ RickMorty demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.    
 </p>    
-</br>    
 
 
 <img src="/previews/preview.gif" width="300" height="450"/>
